@@ -334,21 +334,21 @@ Some notable references:</p>
 <h4 id="proget">ProGet</h4>
 <ul>
 <li>Windows Server</li>
-<li>CPU - 4 cores (Recommend more)</li>
-<li>RAM - 8GB+</li>
-<li>Storage (HDD) - We recommend 2–5TB of free space for a local file store of artifacts (default install needs 20GB).</li>
-<li>Database: SQL Server. Assume high specs for SQL Server, pretty much the highest specs you can configure on a Windows machine. 16+ cores (CPU), 64GB+ RAM, 5TB+, etc</li>
-<li>Chocolatey Repository Type: Chocolatey or NuGet</li>
+<li>CPU - 2 cores (4+ cores recommended for large instances)</li>
+<li>RAM - 4GB+ (8GB recommended for large instances)</li>
+<li>Storage (HDD) - We recommend 2–5TB of free space for a local file store of artifacts (default install needs 10GB).</li>
+<li>Database: SQL Server Express or better. Minimum specs 1GB RAM, 6GB disk space. Install available during download.</li>
+<li>Chocolatey Repository Type: NuGet or ProGet has a Chocolatey designated feed type</li>
 </ul>
 <p>See <a href="https://inedo.com/support/documentation/proget/installation/installation-guide" class="uri">https://inedo.com/support/documentation/proget/installation/installation-guide</a> for more details. There is a Linux installation guide for Docker containers, however we don&#39;t recommend it for production use - <a href="https://inedo.com/support/documentation/proget/installation/installation-guide/linux-docker" class="uri">https://inedo.com/support/documentation/proget/installation/installation-guide/linux-docker</a>.</p>
 <p><strong>PRICING</strong>: Starts at free (for ProGet) - <a href="https://inedo.com/proget/pricing" class="uri">https://inedo.com/proget/pricing</a>.</p>
-<h4 id="proget-enterprise-high-availabilty">ProGet Enterprise High Availabilty</h4>
+<h4 id="proget-enterprise-high-availabilty">ProGet Enterprise High Availability</h4>
 <ul>
 <li>ProGet Server (Each): Windows Server with 4+ cores (CPU), 8GB+ RAM, and probably at least 50GB of free space (as the artifacts are stored on shared storage). This is similar to ProGet section above.</li>
-<li>Shared Storage: Appliance-based (such as NAS), or software-based (such as SMB). This will be shared across all Servers, so they will need to be able to read and write to it at high speed. Recommend appliance-based (NAS) with 3 times the total size of what you will store (and a backup) - 2–5TB+ space.</li>
-<li>Database: SQL Server with Database Clustering Recommended. Assume high specs for SQL Server, pretty much the highest specs you can configure on a Windows machine. 16+ cores (CPU), 64GB+ RAM, 5TB+, etc</li>
-<li>Load Balancer: Assume powerful - this will be software-based (such as nginx or HAProxy) or an appliance (such as F5 or Citrix).</li>
-<li>May or may not support cross-datacenter replication.</li>
+<li>Shared Storage: Compatible with any type of common storage that web and indexing nodes can access, whether software-based (SAMBA share, Windows Server Storage Spaces, etc) or appliance-based (dedicated NAS). The only requirement is that the storage is readable and writeable by all nodes. Recommend appliance-based (NAS) with 3 times the total size of what you will store (and a backup) - 2–5TB+ space.</li>
+<li>Database: SQL Server with Database Clustering Recommended. Assume higher than minimal specs for better High Availability performance.</li>
+<li>Load Balancer: Compatible with any load-balancing platform, whether software-based (such as HAProxy, NLP, or nginx) or appliance-based (such as F5, A10, Citrix).</li>
+<li>High Availability supports cross-datacenter replication.</li>
 </ul>
 <p>See <a href="https://inedo.com/support/documentation/proget/administration/high-availability" class="uri">https://inedo.com/support/documentation/proget/administration/high-availability</a> for details.</p>
 <p><strong>PRICING</strong>: Starts at $9,995 (for ProGet Enterprise) - <a href="https://inedo.com/proget/pricing" class="uri">https://inedo.com/proget/pricing</a>.</p>
